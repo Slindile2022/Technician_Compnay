@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddProductActivity">
+
+    <!-- toll bar-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:background="@drawable/shape_admin">
+
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="add product"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <!-- form to input data-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/productIconTv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
+            app:civ_border_color="@color/purple_700"
+            app:civ_border_width="1dp" />
+
+
+        <EditText
+            android:id="@+id/titleEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="name of appliance"
+            android:textColorHint="@color/black"
+            android:drawableStart="@drawable/ic_baseline_text_fields_24"
+            android:drawablePadding="10dp"
+            android:inputType="textPersonName|textCapWords"
+            android:padding="10dp"
+            android:layout_below="@+id/productIconTv"/>
+
+        <EditText
+            android:id="@+id/descriptionEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:hint="description"
+            android:textColorHint="@color/black"
+            android:drawableStart="@drawable/ic_baseline_text_fields_24"
+            android:drawablePadding="10dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:padding="10dp"
+            android:layout_below="@+id/titleEt"/>
+
+        <EditText
+            android:id="@+id/categoryEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableStart="@drawable/ic_baseline_grid_on_24"
+            android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+            android:drawablePadding="10dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:padding="10dp"
+            android:layout_below="@+id/descriptionEt"/>
+
+        <Button
+            android:id="@+id/addPdtBtn"
+            android:text="ADD APPLIANCE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/categoryEt"
+            android:minWidth="150dp"
+            android:layout_marginTop="5dp"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

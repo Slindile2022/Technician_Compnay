@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardUserActivity">
+
+    <!-- tool bar-->
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/shape_admin">
+
+        <ImageButton
+            android:id="@+id/updateUserBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="31dp"
+            android:layout_toStartOf="@+id/addPdtBtn"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_edit_24" />
+
+        <ImageButton
+            android:id="@+id/addPdtBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="31dp"
+            android:layout_toStartOf="@+id/logoutBtn"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_add_shopping_cart_24" />
+
+
+        <ImageButton
+            android:id="@+id/logoutBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_power_settings_new_24"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"/>
+
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="10dp"
+            app:civ_border_overlay="true"
+            android:src="@drawable/profile"
+            app:civ_border_color="#FF000000"/>
+
+        <TextView
+            android:id="@+id/emailEt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_toEndOf="@id/profile_image"
+            android:textStyle="bold"
+
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/userType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="admin"
+            android:layout_below="@+id/emailEt"
+            android:layout_toEndOf="@id/profile_image"
+            android:textColor="@color/white"/>
+
+
+        <TextView
+            android:id="@+id/subTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:layout_below="@+id/userType"
+            android:layout_toEndOf="@id/profile_image"
+            android:textColor="@color/white"/>
+
+        <!-- tabs for products-->
+
+        <LinearLayout
+            android:layout_below="@+id/profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_rect02"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            >
+
+            <!-- product-->
+
+
+            <!-- orders-->
+
+            <TextView
+                android:id="@+id/tabProductTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rect03"
+                android:gravity="center"
+                android:text="products"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tabOrderTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="orders"
+                android:textColor="@color/black" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <!-- products-->
+
+    <RelativeLayout
+        android:id="@+id/productR1"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No list of appliances, app not linked with the database"
+            android:padding="110dp"
+            android:textAlignment="center"/>
+
+
+    </RelativeLayout>
+
+
+    <!-- orders-->
+    <RelativeLayout
+        android:id="@+id/ordersR1"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No orders yet, app not linked with the database"
+            android:padding="110dp"
+            android:textAlignment="center"/>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

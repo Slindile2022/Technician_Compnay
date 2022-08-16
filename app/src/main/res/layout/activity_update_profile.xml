@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddProductActivity">
+
+    <!-- toll bar-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:background="@drawable/shape_admin">
+
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Update Profile"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+
+
+
+    </RelativeLayout>
+
+    <!-- form to input data-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/productIconTv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
+            app:civ_border_color="@color/purple_700"
+            app:civ_border_width="1dp" />
+
+
+        <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_edittex01"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="10dp"
+            android:hint="First name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:layout_below="@+id/productIconTv"/>
+
+        <EditText
+            android:id="@+id/phoneEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_edittex01"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="10dp"
+            android:hint="phone number"
+            android:inputType="number"
+            android:padding="10dp"
+            android:layout_below="@+id/nameEt"/>
+
+        <EditText
+            android:id="@+id/addressEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableStart="@drawable/ic_baseline_edit_location_24"
+            android:drawablePadding="10dp"
+            android:hint="enter address"
+            android:inputType="textCapSentences|textMultiLine"
+            android:padding="10dp"
+            android:layout_below="@+id/phoneEt"/>
+
+        <Button
+            android:id="@+id/updateProfileBtn"
+            android:text="UPDATE PROFILE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/addressEt"
+            android:minWidth="150dp"
+            android:layout_marginTop="5dp"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
