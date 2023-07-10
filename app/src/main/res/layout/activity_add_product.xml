@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="add product"
+            android:text="add appliance"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -63,11 +63,12 @@
             android:layout_margin="5dp"
             android:hint="name of appliance"
             android:textColorHint="@color/black"
+            android:background="@drawable/rectangle02"
             android:drawableStart="@drawable/ic_baseline_text_fields_24"
             android:drawablePadding="10dp"
             android:inputType="textPersonName|textCapWords"
             android:padding="10dp"
-            android:layout_below="@+id/productIconTv"/>
+            android:layout_below="@+id/productIconTv" />
 
         <EditText
             android:id="@+id/descriptionEt"
@@ -76,6 +77,7 @@
             android:layout_margin="5dp"
             android:hint="description"
             android:textColorHint="@color/black"
+            android:background="@drawable/rectangle02"
             android:drawableStart="@drawable/ic_baseline_text_fields_24"
             android:drawablePadding="10dp"
             android:inputType="textCapSentences|textMultiLine"
@@ -87,7 +89,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:hint="category"
+            android:textColorHint="@color/black"
             android:drawableStart="@drawable/ic_baseline_grid_on_24"
+            android:background="@drawable/rectangle02"
             android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
             android:drawablePadding="10dp"
             android:inputType="textCapSentences|textMultiLine"

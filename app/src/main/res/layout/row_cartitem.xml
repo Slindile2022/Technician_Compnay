@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/itemTitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Item title"
+        android:textColor="@color/black"/>
+
+
+    <TextView
+        android:id="@+id/itemDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemTitleTv"
+        android:text="description"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/itemQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemDescription"
+        android:textStyle="bold"
+        android:text="quantity"
+        android:textColor="@color/black"/>
+
+
+
+
+    <TextView
+        android:id="@+id/itemRemoveTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemDescription"
+        android:layout_alignParentEnd="true"
+        android:text="remove"
+        android:textColor="#FF0000"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_below="@+id/itemQuantity"
+        android:background="@color/purple_700"/>
+
+
+
+
+</RelativeLayout>

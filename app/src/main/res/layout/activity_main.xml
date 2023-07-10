@@ -16,6 +16,7 @@
         android:layout_marginTop="40dp"/>
 
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/iconIv"
@@ -23,14 +24,101 @@
         android:layout_marginTop="10dp"
         android:text="welcome to Home appliance heroes"
         android:textColor="@color/black"
-        android:textSize="16sp"/>
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/step1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcome"
+        android:layout_marginTop="30dp"
+        android:text=" * false identity is prohibited  "
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/step2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step1"
+        android:layout_marginTop="10dp"
+        android:text=" * verify your email after sign up"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/step3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step2"
+        android:layout_marginTop="10dp"
+        android:text=" * your password structure : "
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/step4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step3"
+        android:layout_marginTop="10dp"
+        android:text="             must have lower cases  "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/step5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step4"
+        android:layout_marginTop="10dp"
+        android:text="             must have upper cases  "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/step6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step5"
+        android:layout_marginTop="10dp"
+        android:text="             must have numbers "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="13sp"/>
+
+    <TextView
+        android:id="@+id/step7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step6"
+        android:layout_marginTop="10dp"
+        android:text=" * if you are facing challenges you are encouraged to email the admin"
+        android:textColor="@color/black"
+
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/step8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/step7"
+        android:layout_marginTop="50dp"
+        android:autoLink="email"
+        android:text="  homeappliance@gmail.com"
+        android:textStyle="italic|bold"
+        android:textColor="@color/black"
+
+        android:textSize="15sp"/>
 
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="login"
+        android:text="CONTINUE"
 
         />
 

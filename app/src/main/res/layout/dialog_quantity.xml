@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_admin">
+
+   <!--
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/productIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:civ_border_overlay="true"
+            android:src="@drawable/ic_baseline_add_shopping_cart_24_white" />
+-->
+
+        <ImageView
+            android:id="@+id/productIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="5dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_shopping_cart_24"/>
+
+
+
+<!--
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/productIv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp" />
+-->
+        <TextView
+            android:id="@+id/titleIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="product title"
+            android:textSize="15sp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/productDescriptionTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/titleIv"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:text="product description"
+            android:textSize="15sp"
+            android:textColor="@color/white"/>
+
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="10dp">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <ImageButton
+                android:id="@+id/incrementBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_baseline_add_circle_outline_24"
+           />
+
+            <TextView
+                android:id="@+id/quantityTv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="30dp"/>
+
+
+            <ImageButton
+                android:id="@+id/decrementBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+
+                android:src="@drawable/ic_baseline_remove_circle_outline_24"/>
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/linearLayout"
+        android:background="@color/purple_700"
+        android:padding="5dp"
+        android:text="add to cart"
+        android:textAllCaps="false"/>
+
+
+
+</LinearLayout>

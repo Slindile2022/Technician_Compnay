@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
@@ -14,8 +15,15 @@ import android.widget.Toast;
 import com.example.home.databinding.ActivityLoginBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //int firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
+
 
 
         //setup progress dialog
@@ -70,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validateData();
+
             }
         });
 
@@ -96,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "enter password", Toast.LENGTH_SHORT).show();
         }
         else{
-            //begin loging in user
+            //begin logging in user
             loginUser();
         }
     }
@@ -115,13 +125,11 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult) {
 
-                        //data added to database
-                        progressDialog.dismiss();
-                        Toast.makeText(LoginActivity.this, "welcome back..", Toast.LENGTH_SHORT).show();
+                        //check if the email is verified
+                        checkUser();
 
-                        //direct to dashboard since account created
-                        startActivity(new Intent(LoginActivity.this, DashboardAdminActivity.class));
-                        finish();
+
+
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -135,6 +143,104 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void checkUser() {
+
+
+        //checking if the user is verified or not
+
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser.isEmailVerified()){
+
+           //check in the realtime database the user access level
+
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Users");
+            databaseReference.child(firebaseUser.getUid())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            //get user type
+
+                            String userType =""+snapshot.child("userType").getValue();
+
+
+                            //check user type
+
+                            if(userType.equals("admin")){
+                                //you are an admin
+
+                                progressDialog.dismiss();
+                                startActivity(new Intent(LoginActivity.this, DashboardAdminActivity.class));
+                                finish();
+                                Toast.makeText(LoginActivity.this, "welcome back admin", Toast.LENGTH_SHORT).show();
+                            }
+                            else if(userType.equals("customer")) {
+
+                                //you are an ordinary user , we take you to customer admin
+
+                                progressDialog.dismiss();
+                                startActivity(new Intent(LoginActivity.this, DashboardUserActivity.class));
+                                finish();
+                                Toast.makeText(LoginActivity.this, "welcome back customer", Toast.LENGTH_SHORT).show();
+                            }
+
+                            else if (userType.equals("technician")){
+
+                                //you are an technician, it takes you to normal place
+                                progressDialog.dismiss();
+                                startActivity(new Intent(LoginActivity.this, DashboardTechniciansActivity.class));
+                                finish();
+                                Toast.makeText(LoginActivity.this, "welcome back technician", Toast.LENGTH_SHORT).show();
+
+                            }
+
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+
+
+
+        }
+
+        else {
+
+            //show progress bar
+            progressDialog.setMessage("sending account verification instructions");
+            progressDialog.show();
+
+
+            //send verification email
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+
+                    progressDialog.dismiss();
+
+                    //send verification to the user's email
+                    Toast.makeText(LoginActivity.this, "email verification sent", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    progressDialog.dismiss();
+
+                    Toast.makeText(LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+
+
+        }
     }
 
 
