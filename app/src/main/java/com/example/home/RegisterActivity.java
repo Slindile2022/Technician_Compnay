@@ -116,7 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
         Matcher matcher;
 
         Pattern mobilePattern = Pattern.compile(mobileRegex);
-       matcher = mobilePattern.matcher(phone);
+        matcher = mobilePattern.matcher(phone);
 
 
 

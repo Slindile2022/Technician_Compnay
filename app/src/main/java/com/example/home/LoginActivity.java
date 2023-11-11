@@ -2,10 +2,17 @@ package com.example.home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.telephony.SmsMessage;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
@@ -25,6 +32,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class LoginActivity extends AppCompatActivity {
 
 
@@ -37,6 +46,9 @@ public class LoginActivity extends AppCompatActivity {
     //progress dialog
 
     private ProgressDialog progressDialog;
+
+    String message = "you have been successfully logged in to your profile, regards : Home Appliance Application";
+    String phone = "27729499847";
 
 
 
@@ -80,10 +92,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 validateData();
 
+
             }
         });
 
     }
+
+
 
 
     private String email="", password="";

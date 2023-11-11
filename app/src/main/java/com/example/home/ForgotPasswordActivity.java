@@ -15,6 +15,10 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 
+
+
+
+
 public class ForgotPasswordActivity extends AppCompatActivity {
 
     //view binding
@@ -105,6 +109,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
                         startActivity(new Intent(ForgotPasswordActivity.this, LoginActivity.class));
                         finish();
+
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -116,6 +122,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                         Toast.makeText(ForgotPasswordActivity.this, "failed to send due to "+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
 
 
     }

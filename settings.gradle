@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name = "Home"
+include ':client'
+project(':client').projectDir = new File(settingsDir, '../vonage-java-sdk')

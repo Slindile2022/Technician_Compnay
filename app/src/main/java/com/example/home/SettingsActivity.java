@@ -76,7 +76,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
-        /*
+
         binding.ntfSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -98,7 +98,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
 
-         */
+
         binding.ntfSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
