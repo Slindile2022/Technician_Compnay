@@ -16,6 +16,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> implements Filterable {
 
 
@@ -50,6 +52,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
         //here we are binding the data
 
         ModelUsers modelUsers = modelClassesList.get(position);
+        String profileImageUrl1 = modelUsers.getProfileImage();
 
 
         holder.userName.setText(modelUsers.getName());
@@ -62,6 +65,27 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
        // String imageUri = null;
       //  imageUri = modelUsers.getProfileImage();
       //  Picasso.get().load(imageUri).into(holder.imageView);
+
+        //set user profile picture
+
+        // Assuming you have a reference to the CircleImageView in your ViewHolder
+        CircleImageView profileImage = (CircleImageView) holder.imageView;
+
+        // Get the profile image URL from your PostData object
+        String profileImageUrl = profileImageUrl1;
+
+        // Load the profile image into the CircleImageView using Picasso
+
+        try {
+            Picasso.get().load(profileImageUrl)
+                    .placeholder(R.drawable.profile) // Placeholder image while loading
+                    .error(R.drawable.profile) // Error image if loading fails
+                    .into(profileImage);
+        }catch (Exception e){
+            //do nothing
+        }
+
+
 
 
 
@@ -91,7 +115,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-           // imageView = itemView.findViewById(R.id.userIconTv);
+            imageView = itemView.findViewById(R.id.userIconTv);
             userName = itemView.findViewById(R.id.userNameTv);
             userType = itemView.findViewById(R.id.userTypeTv);
 
